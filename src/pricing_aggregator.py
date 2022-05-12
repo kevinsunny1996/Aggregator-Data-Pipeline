@@ -3,6 +3,7 @@
 import requests
 from abc import ABC, abstractmethod
 import hydra 
+from omegaconf import OmegaConf, DictConfig
 
 # Logger factory class import
 from src.logger.logger import LoggerFactory
@@ -34,32 +35,59 @@ class QueryParams(ABC):
 	def run_query(self):
 		pass
 
+class PricingAggregator(ABC):
+	@abstractmethod
+	def parse_response(self):
+		pass
+
+	@abstractmethod
+	def run_pricing_query(self):
+		pass
+	
 class QueryParamsLocations(QueryParams):
-	def __init__(self, query, locale, currency, url, headers):
+	def __init__(self, query: str, locale: str, currency: float, url: str, headers: dict()):
 		self.query = query
 		self.locale = locale
 		self.currency = currency
 		self.url = url
 		self.headers = headers
 
-	def get_params_query_string(self):
+	@hydra.main(config_path='configs/query.yaml')
+	def get_params_query_string(self, cfg: DictConfig) -> dict():
 		return {
-			'query': self.query,
-			'locale': self.locale,
-			'currency': self.currency
+			'query': cfg.location_params.query,
+			'locale': cfg.location_params.locale,
+			'currency': cfg.location_params.currency
 		}
 	
-	def get_url(self):
-		return self.url
+	@hydra.main(config_path='configs/urls.yaml')
+	def get_url(self, cfg: DictConfig) -> str():
+		return cfg.urls.location_url
 
-	def get_headers(self):
-		return self.headers
+	@hydra.main(config_path='configs/common.yaml')
+	def get_headers(self, cfg: DictConfig) -> dict():
+		return {
+			'X-RapidAPI-Host': cfg.headers.x_rapidapi_host, 
+			'X-RapidAPI-Key': cfg.headers.x_rapidapi_key
+		}
 
-	def run_query(self):
+	def run_query(self) -> None:
 		try:
+			LoggerFactory.get_logger('logs/logger.log', INFO).info('Running query for location')
 			response = requests.request("GET", self.url, headers=self.headers, params=self.get_params_query_string())
 			return response.json()
 		except Exception as e:
 			LoggerFactory.get_logger('logs/logger.log',
 			                         'ERROR').error(f'Error in running query: {e}')
 			
+class QueryParamsPricing(PricingAggregator):
+	def __init__(self, response: Dictionary):
+		self.response = response
+
+	# TODO 1 : Parse the response and save the whole response to a file and return the list of destination IDs
+	def parse_response(self, response: Dictionary):
+		pass
+
+	# TODO 2 : Run the pricing query for each destination ID and save the response to a json file to be later used by preprocessing script
+	def run_pricing_query(self):
+		pass
