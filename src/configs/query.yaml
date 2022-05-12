@@ -1,0 +1,5 @@
+location_params:
+  query: new york
+  locale: en_US
+  currency: USD
+
