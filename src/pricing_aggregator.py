@@ -73,6 +73,7 @@ class QueryParamsLocations(QueryParams):
 
 	def run_query(self) -> None:
 		try:
+			LoggerFactory.get_logger('logs/logger.log', INFO).info('Running query for location')
 			response = requests.request("GET", self.url, headers=self.headers, params=self.get_params_query_string())
 			return response.json()
 		except Exception as e:
