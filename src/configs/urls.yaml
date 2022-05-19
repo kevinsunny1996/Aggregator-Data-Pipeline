@@ -1,3 +1,0 @@
-urls:
-  location_url: https://${{common.headers.X-RapidAPI-Host}}/locations/v2/search
-  pricing_url: https://${{common.headers.X-RapidAPI-Host}}/properties/list
