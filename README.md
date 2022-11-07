@@ -4,3 +4,5 @@
 
 
 [![CodeQL](https://github.com/kevinsunny1996/Hotel-Aggregator/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/kevinsunny1996/Hotel-Aggregator/actions/workflows/codeql-analysis.yml)
+
+https://lift.sonatype.com/api/badge/github.com/kevinsunny1996/Hotel-Aggregator
