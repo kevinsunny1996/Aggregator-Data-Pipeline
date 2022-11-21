@@ -14,7 +14,7 @@ class LoggerFactory(object):
 
         # initialize the logger object
         LoggerFactory._LOGGER = logging.getLogger(log_file)
-        logging.basicConfig(filename=log_file, level=logging.INFO, format=formatter, datefmt='%Y-/%m-/%d %H:%M:%S')
+        logging.basicConfig(filename=log_file, level=logging.INFO, format=formatter, datefmt='%Y-%m-%d %H:%M:%S')
 
         # set logging level based on user input
         if log_level == 'INFO':

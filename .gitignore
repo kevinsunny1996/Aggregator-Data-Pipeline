@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # venv files
-data-gathering/
+data-gathering/*
 
-# hydra runs
-outputs/
+# Log files
+src/logs/*
