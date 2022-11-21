@@ -1,0 +1,20 @@
+{
+  "headers": {
+    "x_rapidapi_host": "hotels4.p.rapidapi.com",
+    "x_rapidapi_key": "16fff31242msh84d1a94fb4afb12p1430a4jsnadfa2e122da5"
+  },
+  "endpoints": {
+    "location_url": "locations/v3/search",
+    "pricing_url": "properties/list"
+  },
+  "location_params": {
+    "query": [
+      "new york",
+      "london",
+      "san francisco",
+      "zurich",
+      "berlin",
+      "amsterdam"
+    ]
+  }
+}
