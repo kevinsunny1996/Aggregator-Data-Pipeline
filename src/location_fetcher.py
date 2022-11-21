@@ -5,7 +5,7 @@ import json
 from logger.logger import LoggerFactory
 
 # Metadata module import
-from metadata_fetcher import get_metadata
+from .metadata_fetcher import get_metadata
 
 def get_locations() -> []:
 
