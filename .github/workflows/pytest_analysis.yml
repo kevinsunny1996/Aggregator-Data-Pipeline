@@ -34,4 +34,4 @@ jobs:
     - name: Test with pytest
       run: |
         cd /home/runner/work/Hotel-Aggregator/Hotel-Aggregator/src/
-        python3 -m pytest tests/test_aggregator_unit_test.py
+        python3 -m pytest --cov tests/test_aggregator_unit_test.py
