@@ -1,0 +1,37 @@
+{
+  "headers": "https://kitsu.io/api/edge",
+  "endpoints": {
+    "trending_anime": "trending/anime",
+    "anime_listing": "edge/anime",
+    "episode_listing": "episodes"
+  },
+  "anime_params": {
+    "slug": [
+      "black-clover",
+      "spy-x-family",
+      "cowboy-bebop",
+      "one-piece",
+      "naruto",
+      "gintama",
+      "one-punch-man",
+      "kimetsu-no-yaiba",
+      "jujutsu-kaisen",
+      "ascendance-of-a-bookworm",
+      "dr-stone",
+      "shingeki-no-kyojin",
+      "death-note",
+      "mob-psycho-100",
+      "world-trigger",
+      "no-game-no-life",
+      "tokyo-revengers",
+      "tokyo-ghoul",
+      "chainsaw-man",
+      "assassination-classroom",
+      "hunter-x-hunter",
+      "boku-no-hero-academia",
+      "fairy-tale",
+      "nanatsu-no-taizai"
+    ],
+    "": ""
+  }
+}
