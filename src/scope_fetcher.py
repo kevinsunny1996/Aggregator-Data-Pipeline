@@ -10,7 +10,7 @@ class ScopeGenerator():
     def get_scopes_per_request(self) -> str:
         api_scopes = open('configs/web_api_scopes.json', 'r')
         scopes     = json.load(api_scopes)
-        LoggerFactory.get_logger('./logs/info.log', INFO).info(f'Fetching scope : {scopes[self.scope_id]} for scope_id: {self.scope_id}')
+        LoggerFactory.get_logger('./logs/info.log', 'INFO').info(f'Fetching scope : {scopes[self.scope_id]} for scope_id: {self.scope_id}')
         return scopes[self.scope_id]
 
 
