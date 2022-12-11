@@ -9,7 +9,6 @@ on:
     - 'test/**'
     - 'bugfix/**'
     - 'feature/**'
-    - 'main'
 
 permissions:
   contents: read
