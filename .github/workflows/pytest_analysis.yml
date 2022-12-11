@@ -33,5 +33,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        cd /home/runner/work/Hotel-Aggregator/Hotel-Aggregator/src/
+        cd /home/runner/work/Aggregator-Data-Pipeline/Aggregator-Data-Pipeline/src
         python3 -m pytest tests/test_aggregator_unit_test.py
