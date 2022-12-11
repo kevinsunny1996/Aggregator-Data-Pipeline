@@ -8,7 +8,7 @@ class ScopeGenerator():
     def __init__(self):
         super()
 
-    @staticmethod()
+    @staticmethod
     def get_scopes_per_request(self, scope_id: str) -> str:
         api_scopes = open('configs/web_api_scopes.json', 'r')
         scopes     = json.load(api_scopes)
