@@ -4,7 +4,7 @@
 name: Code Testing
 
 on:
-  pull_request:
+  push:
     branches: 
     - 'test/**'
     - 'bugfix/**'
