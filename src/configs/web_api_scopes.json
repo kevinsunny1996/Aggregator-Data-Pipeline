@@ -1,0 +1,21 @@
+{
+  "uip": "ugc-image-upload",
+  "urps": "user-read-playback-state",
+  "umps": "user-modify-playback-state",
+  "urcp": "user-read-currently-playing",
+  "arc": "app-remote-control",
+  "s": "streaming",
+  "prp": "playlist-read-private",
+  "prc": "playlist-read-collaborative",
+  "pmp": "playlist-modify-private",
+  "pmpu": "playlist-modify-public",
+  "ufm": "user-follow-modify",
+  "ufr": "user-follow-read",
+  "urpp": "user-read-playback-position",
+  "utp": "user-top-read",
+  "urrp": "user-read-recently-played",
+  "ulm": "user-library-modify",
+  "ulr": "user-library-read",
+  "ure": "user-read-email",
+  "urp": "user-read-private"
+}
