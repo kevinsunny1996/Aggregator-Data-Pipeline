@@ -9,5 +9,6 @@ from src.scope_fetcher import ScopeGenerator
 
 # Check to confirm that the list size of the metadata method is same and not less than 46 to make sure zip function works in locations module
 def test_scope_fetching() -> None:
-    test_scope = ScopeGenerator.get_scopes_per_request(scope_id="urpp")        
+    scope_gen_test = ScopeGenerator("urpp")
+    test_scope = scope_gen_test.get_scopes_per_request()        
     assert test_scope == "user-read-playback-position"

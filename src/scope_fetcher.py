@@ -5,14 +5,12 @@ from logger.logger import LoggerFactory
 
 
 class ScopeGenerator():
-    def __init__(self):
-        super()
-
-    @staticmethod
-    def get_scopes_per_request(self, scope_id: str) -> str:
+    def __init__(self, scope_id):
+        self.scope_id = scope_id
+    def get_scopes_per_request(self) -> str:
         api_scopes = open('configs/web_api_scopes.json', 'r')
         scopes     = json.load(api_scopes)
-        LoggerFactory.get_logger('./logs/info.log', INFO).info(f'Fetching scope : {scopes[self.scope_id]} for scope_id: {self.scope_id}')
+        LoggerFactory.get_logger('./logs/info.log', 'INFO').info(f'Fetching scope : {scopes[self.scope_id]} for scope_id: {self.scope_id}')
         return scopes[self.scope_id]
 
 
